@@ -26,3 +26,4 @@
 
 (use-package rust-mode)
 (use-package kotlin-mode)
+(use-package yaml-mode)
