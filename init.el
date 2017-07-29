@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (electric-pair-mode 1)
@@ -15,3 +15,14 @@
  '(custom-enabled-themes (quote (wheatgrass))))
 (custom-set-faces
 )
+
+;; auto-install packages if not installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+(use-package rust-mode)
+(use-package kotlin-mode)
