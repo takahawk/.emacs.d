@@ -27,4 +27,6 @@
 (use-package rust-mode)
 (use-package kotlin-mode)
 (use-package yaml-mode)
-(use-package magit)
+(use-package magit
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
