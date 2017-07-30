@@ -10,7 +10,8 @@
 (electric-pair-mode 1)
 (show-paren-mode t)
 (global-linum-mode t)
-
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -24,7 +25,7 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(package-selected-packages
    (quote
-    (company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,10 +50,15 @@
 
 (use-package company
   :config
-  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
   (setq company-tooltip-align-annotations t))
+
 (use-package racer
   :config
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode)
+  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
   (add-hook 'racer-mode-hook #'company-mode))
+
+(use-package cargo
+  :config
+  (add-hook 'rust-mode-hook #'cargo-minor-mode))
