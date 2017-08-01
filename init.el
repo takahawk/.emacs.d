@@ -53,6 +53,11 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+(use-package minimap
+  :config
+  (add-hook 'rust-mode-hook #'minimap-mode)
+  (add-hook 'kotlin-mode-hook #'minimap-mode))
+
 (use-package company
   :config
   (setq company-tooltip-align-annotations t))
@@ -67,3 +72,4 @@
 (use-package cargo
   :config
   (add-hook 'rust-mode-hook #'cargo-minor-mode))
+
