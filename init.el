@@ -58,16 +58,6 @@
   (add-hook 'rust-mode-hook #'minimap-mode)
   (add-hook 'kotlin-mode-hook #'minimap-mode))
 
-(use-package company
-  :config
-  (setq company-tooltip-align-annotations t))
-
-(use-package racer
-  :config
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode)
-  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-  (add-hook 'racer-mode-hook #'company-mode))
 
 (use-package cargo
   :config
