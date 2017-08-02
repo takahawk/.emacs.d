@@ -55,8 +55,7 @@
 
 (use-package minimap
   :config
-  (add-hook 'rust-mode-hook #'minimap-mode)
-  (add-hook 'kotlin-mode-hook #'minimap-mode))
+  (global-set-key (kbd "C-x f") 'minimap-mode))
 
 
 (use-package cargo
