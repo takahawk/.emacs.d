@@ -15,6 +15,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
+;; C
+(setq-default c-basic-offset 4)
+
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
 
