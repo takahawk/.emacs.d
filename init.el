@@ -16,6 +16,7 @@
 (setq-default tab-width 4)
 
 ;; C
+(add-hook 'c-mode-hook (lambda () (setq indent-tabs-mode t)))
 (setq-default c-basic-offset 4)
 
 (global-set-key (kbd "C-x n") 'next-buffer)
