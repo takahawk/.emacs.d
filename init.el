@@ -16,8 +16,11 @@
 (setq-default tab-width 4)
 
 ;; C
-(add-hook 'c-mode-hook (lambda () (setq indent-tabs-mode t)))
-(add-hook 'c-mode-hook (lambda () (setq c-syntactic-indentation nil)))
+(defun c-mode-config ()
+  (setq indent-tabs-mode t)
+  (setq c-syntactic-indentation nil)
+  (local-set-key (kbd "DEL") 'delete-backward-char))
+(add-hook 'c-mode-hook 'c-mode-config)
 (setq-default c-basic-offset 4)
 
 ;; Gtk+
