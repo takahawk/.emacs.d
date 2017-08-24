@@ -19,6 +19,9 @@
 (add-hook 'c-mode-hook (lambda () (setq indent-tabs-mode t)))
 (setq-default c-basic-offset 4)
 
+;; Gtk+
+(add-to-list 'auto-mode-alist '("\\.ui\\'" . xml-mode))
+
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
 
