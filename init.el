@@ -17,6 +17,7 @@
 
 ;; C
 (add-hook 'c-mode-hook (lambda () (setq indent-tabs-mode t)))
+(add-hook 'c-mode-hook (lambda () (setq c-syntactic-indentation nil)))
 (setq-default c-basic-offset 4)
 
 ;; Gtk+
