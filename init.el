@@ -26,6 +26,9 @@
 ;; Gtk+
 (add-to-list 'auto-mode-alist '("\\.ui\\'" . xml-mode))
 
+;; XML
+(setq-default nxml-slash-auto-complete-flag t)
+
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
 
