@@ -3,6 +3,9 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 (setq inhibit-startup-screen t)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -28,6 +31,11 @@
 
 ;; XML
 (setq-default nxml-slash-auto-complete-flag t)
+
+;; Lua
+(use-package lua-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode)))
 
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
@@ -57,8 +65,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 (use-package rust-mode)
 (use-package kotlin-mode)
