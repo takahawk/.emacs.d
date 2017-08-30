@@ -49,7 +49,9 @@
   (add-hook 'kotlin-mode-hook 'c-mode-config))
 
 ;; Groovy
-(use-package groovy-mode)
+(use-package groovy-mode
+  :config
+  (add-hook 'groovy-mode-hook 'c-mode-config))
 
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
