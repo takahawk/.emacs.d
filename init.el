@@ -24,6 +24,10 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
+(use-package ido
+  :config
+  (ido-mode t))
+
 ;; C
 (defun c-mode-config ()
   (setq indent-tabs-mode t)
@@ -68,7 +72,7 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(package-selected-packages
    (quote
-    (cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
