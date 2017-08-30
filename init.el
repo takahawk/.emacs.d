@@ -37,6 +37,10 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode)))
 
+;; Kotlin
+(use-package kotlin-mode)
+(add-hook 'kotlin-mode-hook 'c-mode-config)
+
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
 
@@ -67,7 +71,7 @@
 
 
 (use-package rust-mode)
-(use-package kotlin-mode)
+
 (use-package yaml-mode)
 (use-package magit
   :config
