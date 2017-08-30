@@ -44,8 +44,12 @@
   (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode)))
 
 ;; Kotlin
-(use-package kotlin-mode)
-(add-hook 'kotlin-mode-hook 'c-mode-config)
+(use-package kotlin-mode
+  :config
+  (add-hook 'kotlin-mode-hook 'c-mode-config))
+
+;; Groovy
+(use-package groovy-mode)
 
 (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x p") 'previous-buffer)
