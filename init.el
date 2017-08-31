@@ -28,11 +28,14 @@
   :config
   (ido-mode t))
 
+(use-package auto-complete)
+
 ;; C
 (defun c-mode-config ()
   (setq indent-tabs-mode t)
   (setq c-syntactic-indentation nil)
-  (local-set-key (kbd "DEL") 'delete-backward-char))
+  (local-set-key (kbd "DEL") 'delete-backward-char)
+  (auto-complete-mode))
 (add-hook 'c-mode-hook 'c-mode-config)
 (setq-default c-basic-offset 4)
 
