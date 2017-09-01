@@ -30,6 +30,10 @@
 
 (use-package auto-complete)
 
+(use-package powerline
+  :config
+  (powerline-center-theme))
+
 ;; C
 (defun c-mode-config ()
   (setq indent-tabs-mode t)
