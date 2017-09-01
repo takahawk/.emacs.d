@@ -35,6 +35,9 @@
   (powerline-center-theme))
 
 (use-package undo-tree)
+(use-package whitespace-cleanup-mode
+  :config
+  (global-whitespace-cleanup-mode))
 
 ;; C
 (defun c-mode-config ()
