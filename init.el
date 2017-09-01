@@ -34,6 +34,8 @@
   :config
   (powerline-center-theme))
 
+(use-package undo-tree)
+
 ;; C
 (defun c-mode-config ()
   (setq indent-tabs-mode t)
