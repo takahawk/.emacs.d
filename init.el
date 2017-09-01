@@ -26,7 +26,8 @@
 
 (use-package ido
   :config
-  (ido-mode t))
+  (ido-mode t)
+  (setq ido-case-fold nil))
 
 (use-package auto-complete)
 
@@ -35,9 +36,20 @@
   (powerline-center-theme))
 
 (use-package undo-tree)
+
 (use-package whitespace-cleanup-mode
   :config
   (global-whitespace-cleanup-mode))
+
+;; Shell
+(use-package shell-pop
+  :config
+  (global-set-key (kbd "C-t") 'shell-pop)
+  (setq shell-pop-window-position "bottom"))
+
+(use-package bash-completion
+  :config
+  (bash-completion-setup))
 
 ;; C
 (defun c-mode-config ()
