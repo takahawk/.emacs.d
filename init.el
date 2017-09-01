@@ -40,7 +40,9 @@
   :config
   (powerline-center-theme))
 
-(use-package undo-tree)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
 (use-package whitespace-cleanup-mode
   :config
@@ -55,6 +57,11 @@
 (use-package bash-completion
   :config
   (bash-completion-setup))
+
+(defun shell-mode-config ()
+  (linum-mode -1))
+
+(add-hook 'shell-mode-hook 'shell-mode-config)
 
 ;; C
 (defun c-mode-config ()
