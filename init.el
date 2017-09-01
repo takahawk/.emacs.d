@@ -12,6 +12,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; auto-install packages if not installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (setq inhibit-startup-screen t)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -94,6 +99,7 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes (quote (wheatgrass)))
+ '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
     (escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
@@ -104,10 +110,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; auto-install packages if not installed
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
 
 
 (use-package rust-mode)
