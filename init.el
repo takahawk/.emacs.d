@@ -4,9 +4,9 @@
         ("melpa-stable" . "https://stable.melpa.org/packages/")
         ("melpa" . "https://melpa.org/packages/"))
       package-archive-priorities
-      '(("gnu-elpa" . 10)
-        ("melpa-stable" . 5)
-        ("melpa" . 0)))
+      '(("gnu-elpa" . 2)
+        ("melpa-stable" . 3)
+        ("melpa" . 1)))
 (package-initialize)
 
 (require 'use-package)
@@ -58,8 +58,24 @@
   :config
   (bash-completion-setup))
 
+(defun shell-mode-cd-backward ()
+  "Move to parent directory"
+  ;; TODO: fix
+  (interactive)
+  (goto-char (comint-line-beginning-position))
+  (kill-line)
+  (comint-kill-whole-line 0)
+  (current-kill 1)
+  (let ((beg (point)))
+    (insert "cd ..")
+    (comint-send-input)
+    (delete-region beg (point))
+    (yank)))
+
 (defun shell-mode-config ()
-  (linum-mode -1))
+  (linum-mode -1)
+  ;; (local-set-key (kbd "M-DEL") 'shell-mode-cd-backward)
+  )
 
 (add-hook 'shell-mode-hook 'shell-mode-config)
 
@@ -109,7 +125,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
