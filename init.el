@@ -62,6 +62,7 @@
   "Move to parent directory"
   ;; TODO: fix
   (interactive)
+  (insert "x")
   (goto-char (comint-line-beginning-position))
   (kill-line)
   (comint-kill-whole-line 0)
@@ -70,7 +71,8 @@
     (insert "cd ..")
     (comint-send-input)
     (delete-region beg (point))
-    (yank)))
+    (yank)
+    (delete-char -1)))
 
 (defun shell-mode-config ()
   (linum-mode -1)
