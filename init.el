@@ -60,7 +60,6 @@
 
 (defun shell-mode-cd-backward ()
   "Move to parent directory"
-  ;; TODO: fix
   (interactive)
   (insert "x")
   (goto-char (comint-line-beginning-position))
@@ -76,7 +75,7 @@
 
 (defun shell-mode-config ()
   (linum-mode -1)
-  ;; (local-set-key (kbd "M-DEL") 'shell-mode-cd-backward)
+  (local-set-key (kbd "M-DEL") 'shell-mode-cd-backward)
   )
 
 (add-hook 'shell-mode-hook 'shell-mode-config)
