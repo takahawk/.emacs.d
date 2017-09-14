@@ -122,7 +122,7 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes (quote (wheatgrass)))
+ '(custom-enabled-themes (quote (misterioso)))
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
@@ -134,6 +134,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+(set-cursor-color "#ffffff")
 
 
 (use-package rust-mode)
