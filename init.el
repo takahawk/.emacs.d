@@ -95,6 +95,11 @@
 ;; XML
 (setq-default nxml-slash-auto-complete-flag t)
 
+;; Ruby
+(defun ruby-mode-config ()
+  (auto-complete-mode))
+(add-hook 'ruby-mode-hook 'ruby-mode-config)
+
 ;; Lua
 (use-package lua-mode
   :config
