@@ -141,7 +141,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (minimap bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (railscasts-reloaded-theme minimap bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -168,3 +168,7 @@
   :config
   (add-hook 'rust-mode-hook #'cargo-minor-mode))
 
+(use-package railscasts-reloaded-theme
+	:ensure t
+	:init
+	(load-theme 'railscasts-reloaded t))
