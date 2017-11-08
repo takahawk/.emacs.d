@@ -81,6 +81,16 @@
 
 (add-hook 'shell-mode-hook 'shell-mode-config)
 
+;; Web
+(defun web-mode-config ()
+  (setq web-mode-markup-indent-offset 2))
+
+(use-package web-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-hook 'web-mode-hook 'web-mode-config))
+
 ;; C
 (defun c-mode-config ()
   (setq indent-tabs-mode t)
@@ -95,6 +105,11 @@
 
 ;; XML
 (setq-default nxml-slash-auto-complete-flag t)
+
+;; Ruby
+(defun ruby-mode-config ()
+  (auto-complete-mode))
+(add-hook 'ruby-mode-hook 'ruby-mode-config)
 
 ;; Lua
 (use-package lua-mode
@@ -130,7 +145,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (railscasts-reloaded-theme minimap bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -157,3 +172,7 @@
   :config
   (add-hook 'rust-mode-hook #'cargo-minor-mode))
 
+(use-package railscasts-reloaded-theme
+	:ensure t
+	:init
+	(load-theme 'railscasts-reloaded t))
