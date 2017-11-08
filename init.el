@@ -8,6 +8,7 @@
         ("melpa-stable" . 3)
         ("melpa" . 1)))
 (package-initialize)
+(package-refresh-contents)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -104,6 +105,9 @@
 (use-package kotlin-mode
   :config
   (add-hook 'kotlin-mode-hook 'c-mode-config))
+
+;; Elixir
+(use-package elixir-mode)
 
 ;; Groovy
 (use-package groovy-mode
