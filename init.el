@@ -122,7 +122,14 @@
   (add-hook 'kotlin-mode-hook 'c-mode-config))
 
 ;; Haskell
+
+(defun haskell-cabal-mode-config()
+  (haskell-indentation-mode -1)
+  (auto-complete-mode)
+  (local-set-key (kbd "DEL") 'delete-backward-char))
+
 (use-package haskell-mode)
+(add-hook 'haskell-cabal-mode-hook 'haskell-cabal-mode-config)
 
 ;; Elixir
 (use-package elixir-mode)
@@ -148,7 +155,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (haskell-mode elixir-mode railscasts-reloaded-theme minimap bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
+    (haskell-mode railscasts-reloaded-theme minimap bash-completion groovy-mode escreen cargo company racer racer-mode company-mode magit yaml-mode kotlin-mode rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
