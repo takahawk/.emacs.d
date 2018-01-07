@@ -117,9 +117,19 @@
   (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode)))
 
 ;; Kotlin
+(defun delete-tab ()
+  (interactive)
+  (delete-char -4))
+
+(defun kotlin-mode-config ()
+  (setq c-syntactic-indentation nil)
+  (local-set-key (kbd "C-M-<backspace>") 'delete-tab)
+  (auto-complete-mode))
+
 (use-package kotlin-mode
   :config
-  (add-hook 'kotlin-mode-hook 'c-mode-config))
+  (add-to-list 'auto-mode-alist '("\\.kts\\'" . kotlin-mode))
+  (add-hook 'kotlin-mode-hook 'kotlin-mode-config))
 
 ;; Haskell
 
@@ -128,8 +138,14 @@
   (auto-complete-mode)
   (local-set-key (kbd "DEL") 'delete-backward-char))
 
-(use-package haskell-mode)
-(add-hook 'haskell-cabal-mode-hook 'haskell-cabal-mode-config)
+(defun haskell-mode-config()
+  (auto-complete-mode))
+
+(use-package haskell-mode
+  :config
+  (add-hook 'haskell-mode-hook 'haskell-mode-config)
+  (add-hook 'haskell-cabal-mode-hook 'haskell-cabal-mode-config))
+
 
 ;; Elixir
 (use-package elixir-mode)
