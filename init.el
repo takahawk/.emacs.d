@@ -27,6 +27,10 @@
 (ido-mode                            t)
 
 
+;; moving config
+(setq line-move-visual nil)
+
+
 ;; customize interface
 (custom-set-variables
  '(package-selected-packages (quote (dakrone-theme))))
