@@ -32,6 +32,7 @@
 (setq line-move-visual        nil)
 (global-subword-mode            t)
 (global-superword-mode         -1)
+(setq shift-select-mode       nil)
 
 
 ;; customize interface
