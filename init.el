@@ -27,14 +27,14 @@
 (ido-mode                            t)
 
 
-;; movement 
-(setq line-move-visual nil)
-(global-subword-mode     t)
-(global-superword-mode  -1)
+;; movement
+(setq next-screen-context-lines 5)
+(setq line-move-visual        nil)
+(global-subword-mode            t)
+(global-superword-mode         -1)
 
 
 ;; customize interface
 (custom-set-variables
  '(package-selected-packages (quote (dakrone-theme))))
-(custom-set-faces
- )
+(custom-set-faces)
