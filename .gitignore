@@ -2,6 +2,7 @@ auto-save-list
 elpa
 url
 *~
+bookmarks
 session.*
 ido.last
 ac-comphist.dat
