@@ -27,8 +27,10 @@
 (ido-mode                            t)
 
 
-;; moving config
+;; movement 
 (setq line-move-visual nil)
+(global-subword-mode     t)
+(global-superword-mode  -1)
 
 
 ;; customize interface
