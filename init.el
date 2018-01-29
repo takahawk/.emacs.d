@@ -1,10 +1,9 @@
-(package-initialize)
-
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
 	("marmalade" . "http://marmalade-repo.org/packages/")
-	("melpa" . "http://melpa.milkbox.net/packages/")))
-
+	("melpa" . "http://melpa.org/packages/")
+	("melpa-stable" . "https://stable.melpa.org/packages/")))
+(package-initialize)
 
 ;; appearance
 (load-theme 'dakrone t)
