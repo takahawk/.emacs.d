@@ -36,7 +36,8 @@
 
 
 ;; other config
-(setq kill-ring-max 1000)
+(setq            kill-ring-max 1000)
+(setq kill-do-not-save-duplicates t)
 
 
 ;; customize interface
