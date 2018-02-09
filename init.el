@@ -17,6 +17,11 @@
 (global-set-key (kbd "M-i")        'imenu)
 
 
+;; editing
+(electric-pair-mode t)
+(show-paren-mode    t)
+
+
 ;; ido mode
 (setq ido-enable-flex-matching       t)
 (setq ido-everywhere                 t)
